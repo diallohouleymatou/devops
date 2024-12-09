@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global body and layout styling */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f2f5; /* Light background */
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Maximum width for content */
+  padding: 20px;
+}
+
+.app-layout {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+}
+
+.form-container, .table-container {
+  width: 100%;
+  max-width: 900px; /* Limit the size of the form and table */
+  margin-bottom: 20px;
+}
+
+.form-card, .table-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  background-color: #1890ff;
+  color: white;
+}
+
+button:hover {
+  background-color: #40a9ff;
+}
+
+
