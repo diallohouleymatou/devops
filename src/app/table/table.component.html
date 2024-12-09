@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau avec bordure</title>
+</head>
+<body>
+
+
+
+<h2>Tableau simple avec bordures</h2>
+
+<table border="1">
+  <tr>
+    <th>Numero</th>
+    <th>Prenom</th>
+    <th>Nom</th>
+    <th>Classe</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let etudiant of etudiants">
+    <td>{{etudiant.numero}}</td>
+    <td>{{etudiant.prenom}}</td>
+    <td>{{etudiant.nom}}</td>
+    <td>{{etudiant.classe}}</td>
+    <td><button (click)="supprimer(etudiant.numero)">supprimer</button>
+      <button>modifier</button>
+    </td>
+
+  </tr>
+</table>
+
+</body>
+</html>
+

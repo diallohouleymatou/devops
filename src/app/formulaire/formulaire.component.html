@@ -1,0 +1,8 @@
+<label>prenom</label>
+<input id="prenom" [(ngModel)]="newEtudiant.prenom">
+<label>nom</label>
+<input id="nom" [(ngModel)]="newEtudiant.nom">
+<label>classe</label>
+<input id="classe" [(ngModel)]="newEtudiant.classe">
+<button (click)="addNewEtudiant()">Ajouter</button>
+<app-table [etudiants]="etudiants"></app-table>
