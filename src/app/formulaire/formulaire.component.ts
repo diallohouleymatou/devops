@@ -18,7 +18,7 @@ interface Etudiant{
   styleUrl: './formulaire.component.css'
 })
 export class FormulaireComponent {
-  etudiants:Etudiant[]=[]
+  @Input() etudiants:Etudiant[]=[]
 
   @Input()newEtudiant:Etudiant = {
     numero:0,
@@ -47,6 +47,18 @@ export class FormulaireComponent {
     }
   }
 
+
+  modifierEtudiant(newEtudiant: Etudiant) {
+    this.etudiants[newEtudiant.numero -1 ] = newEtudiant;
+    this.modifier = false;
+    this.ajouter = true;
+    this.newEtudiant ={
+      numero:0,
+      prenom:"",
+      nom:"",
+      classe:"",
+    }
+  }
 }
 
 

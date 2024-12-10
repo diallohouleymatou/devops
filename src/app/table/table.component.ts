@@ -34,7 +34,7 @@ export class TableComponent {
    numero:0,
    prenom:"i",
    nom:"hh",
-   classe:"nn",
+   classe:"",
  };
   supprimer(index:number):void{
   this.etudiants.splice(index-1,1);
