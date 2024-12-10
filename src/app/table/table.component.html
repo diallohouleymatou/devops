@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tableau avec bordure</title>
-</head>
-<body>
+<app-formulaire [ajouter]="false" *ngIf="modifier" [modifier]="true" [newEtudiant]="etudiant"></app-formulaire>
+<app-formulaire *ngIf="ajouter" (etudiantChange)="etudiantPost($event)" [ajouter]="true" [modifier]="false"></app-formulaire>
 
-
-
-<h2>Tableau simple avec bordures</h2>
 
 <table border="1">
   <tr>
@@ -25,12 +16,11 @@
     <td>{{etudiant.nom}}</td>
     <td>{{etudiant.classe}}</td>
     <td><button (click)="supprimer(etudiant.numero)">supprimer</button>
-      <button>modifier</button>
+      <button (click)="modifierEt(etudiant)">modifier</button>
     </td>
 
   </tr>
 </table>
 
-</body>
-</html>
+
 

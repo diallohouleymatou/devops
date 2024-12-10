@@ -1,6 +1,7 @@
 import {Component, Input, input} from '@angular/core';
-import {NgForOf} from '@angular/common';
+import {NgForOf, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {FormulaireComponent} from "../formulaire/formulaire.component";
 interface Etudiant{
   numero:number;
   prenom:string;
@@ -11,7 +12,9 @@ interface Etudiant{
   selector: 'app-table',
   imports: [
     NgForOf,
-    FormsModule
+    FormsModule,
+    FormulaireComponent,
+    NgIf
   ],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
@@ -23,11 +26,30 @@ export class TableComponent {
     nom:"",
     classe:"",
   }
-  @Input() etudiants!: Etudiant[];
+  @Input() etudiants : Etudiant[]=[];
+  modifier:boolean = false;
+  ajouter:boolean = true;
 
-
+ etudiant: Etudiant = {
+   numero:0,
+   prenom:"i",
+   nom:"hh",
+   classe:"nn",
+ };
   supprimer(index:number):void{
   this.etudiants.splice(index-1,1);
+
+  }
+
+  etudiantPost($event: Etudiant) {
+    this.etudiants.push($event);
+
+  }
+
+  modifierEt(etudiant: Etudiant) {
+    this.ajouter = false;
+    this.modifier = true;
+    this.etudiant = etudiant;
 
   }
 }

@@ -1,8 +1,20 @@
-<label>prenom</label>
-<input id="prenom" [(ngModel)]="newEtudiant.prenom">
-<label>nom</label>
-<input id="nom" [(ngModel)]="newEtudiant.nom">
-<label>classe</label>
-<input id="classe" [(ngModel)]="newEtudiant.classe">
-<button (click)="addNewEtudiant()">Ajouter</button>
-<app-table [etudiants]="etudiants"></app-table>
+<div *ngIf="ajouter">
+  <label>prenom</label>
+  <input id="prenom" [(ngModel)]="newEtudiant.prenom">
+  <label>nom</label>
+  <input id="nom" [(ngModel)]="newEtudiant.nom">
+  <label>classe</label>
+  <input id="classe" [(ngModel)]="newEtudiant.classe">
+  <button (click)="addNewEtudiant()">Ajouter</button>
+</div>
+
+
+<div *ngIf="modifier">
+  <label>prenom</label>
+  <input id="p" [(ngModel)]="newEtudiant.prenom">
+  <label>nom</label>
+  <input id="n" [(ngModel)]="newEtudiant.nom">
+  <label>classe</label>
+  <input id="c" [(ngModel)]="newEtudiant.classe">
+  <button (click)="addNewEtudiant()">Ajouter</button>
+</div>
